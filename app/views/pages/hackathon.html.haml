@@ -1,49 +1,52 @@
-#hackathon
-  %h2 Što je hackathon?
-  :markdown
-    Hackathon je kreativno okupljanje developera s prigodnim cjelodnevnim programiranjem. Programiramo od jutra do mraka i pokušavamo izgraditi nešto korisno, lijepo, zabavno ili jednostavno kul. 
-    
-    Poanta okupljanja je da ideje koje vas već neko vrijeme kopkaju i želite ih pretvoriti u nešto konkretno, ali ne stignete od hrpu posla / nikako vam se ne da, jer se ne možete natjerati... pretočite u konkretan kod uz ugodno društvo i stimulativnu atmosferu. 
-    
-    Kako stimulativnu? Je li vam se ikada dogodilo da ste prijatelje pokušali zadiviti zanosnom ljepotom svoga koda, a da su vas isti samo blijedo gledali? E, pa, sada imate priliku svima pokazati koliko ste dobri, jer ćete biti okruženi svojom vrstom. Vječna slava vam je napokon nadomak ruke.
-    
-    ### Kako hackathon funkcionira?
 
-    * kodiramo u timovima (idealno tri osobe, moguće 2-5)
-    * svaki tim ima voditelja / voditelj je osoba čija je originalna ideja projekta
-    * ako nemate svoju ideju, priključujete se timu i slušate voditelja :)
-    * sve što hekamo mora biti pod open-source licencom (idealno MIT)
+-if @hackathon && @hackathon.announcement
+  #hackathon
+    %h2 Što je hackathon?
+    :markdown
+      Hackathon je kreativno okupljanje developera s prigodnim cjelodnevnim programiranjem. Programiramo od jutra do mraka i pokušavamo izgraditi nešto korisno, lijepo, zabavno ili jednostavno kul. 
+      
+      Poanta okupljanja je da ideje koje vas već neko vrijeme kopkaju i želite ih pretvoriti u nešto konkretno, ali ne stignete od hrpu posla / nikako vam se ne da, jer se ne možete natjerati... pretočite u konkretan kod uz ugodno društvo i stimulativnu atmosferu. 
+      
+      Kako stimulativnu? Je li vam se ikada dogodilo da ste prijatelje pokušali zadiviti zanosnom ljepotom svoga koda, a da su vas isti samo blijedo gledali? E, pa, sada imate priliku svima pokazati koliko ste dobri, jer ćete biti okruženi svojom vrstom. Vječna slava vam je napokon nadomak ruke.
+      
+      ### Kako hackathon funkcionira?
 
-    ### Mogu li se i ja prijaviti?
-    
-    Naravno, ali prije nego li se prijavite, razmislite o tome što želite raditi i kako to želite ostvariti. Kada ste razmislili, bilo bi idealno da pošaljete opis toga što želite raditi na <span class="yellow">codeatsix@infinum.hr</span> kako bismo znali najaviti teme hackathona.
-    
-    Popis bi se trebao sastojati od sljedećeg:  
+      * kodiramo u timovima (idealno tri osobe, moguće 2-5)
+      * svaki tim ima voditelja / voditelj je osoba čija je originalna ideja projekta
+      * ako nemate svoju ideju, priključujete se timu i slušate voditelja :)
+      * sve što hekamo mora biti pod open-source licencom (idealno MIT)
 
-    * naziva i opisa projekta (feature set)
-    * tehnologija koje će se koristiti
-    * projicirane veličine tima i zaduženja članova po timu
-    * članova tima, ako ih znate
+      ### Mogu li se i ja prijaviti?
+      
+      Naravno, ali prije nego li se prijavite, razmislite o tome što želite raditi i kako to želite ostvariti. Kada ste razmislili, bilo bi idealno da pošaljete opis toga što želite raditi na <span class="yellow">codeatsix@infinum.hr</span> kako bismo znali najaviti teme hackathona.
+      
+      Popis bi se trebao sastojati od sljedećeg:  
 
-    Naravno, ako nemate konkretan projekt, bilo kakvi prijedlozi i ideje su dobrodošli. U svakom slučaju, pošaljite nam nekakav feedback.
+      * naziva i opisa projekta (feature set)
+      * tehnologija koje će se koristiti
+      * projicirane veličine tima i zaduženja članova po timu
+      * članova tima, ako ih znate
 
-    Na kraju hackathona, implementirano objavljujemo na githubu. Kao što rekosmo, vječna slava najboljima.
-    
-    **Napomena**: prijavite se što prije, broj mjesta je ograničen - najzanimljivije ideje imaju prednost.
+      Naravno, ako nemate konkretan projekt, bilo kakvi prijedlozi i ideje su dobrodošli. U svakom slučaju, pošaljite nam nekakav feedback.
 
-#submissions
-  %hr
-  =render :partial => 'pages/submission', :locals => { :event => @hackathon }
-  .clearboth
+      Na kraju hackathona, implementirano objavljujemo na githubu. Kao što rekosmo, vječna slava najboljima.
+      
+      **Napomena**: prijavite se što prije, broj mjesta je ograničen - najzanimljivije ideje imaju prednost.
 
--if @hackathon
+  #submissions
+    %hr
+    =render :partial => 'pages/submission', :locals => { :event => @hackathon }
+    .clearboth
+
   #projects
     %hr
     %h2
       Što ćemo hekati?
     = markdown @hackathon.announcement
 
-- if @hackathon
   #participants
     %hr
     =render :partial => 'pages/participants', :locals => { :event => @hackathon }
+-elsif @last_hackathon
+  #report
+    = markdown @last_hackathon.report

@@ -31,13 +31,22 @@ class Event < ActiveRecord::Base
     where("whatisit = 'meetup'")
   end
 
-  def self.upcomings
+  def self.upcoming
     where("scheduled_at >= ? AND is_active = ?", Date.today, true)
         .order('scheduled_at ASC')
   end
 
+  def self.previous
+    where("scheduled_at < ? AND is_active = ?", Date.today, false)
+        .order('scheduled_at ASC')
+  end
+
   def self.active
-    upcomings.first
+    upcoming.first
+  end
+
+  def self.last
+    previous.first
   end
 
   def as_json(options = {})
