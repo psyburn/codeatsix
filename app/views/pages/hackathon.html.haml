@@ -1,5 +1,4 @@
-
--if @hackathon && @hackathon.announcement
+-if @hackathon && !@hackathon.report
   #hackathon
     %h2 Što je hackathon?
     :markdown
@@ -42,11 +41,11 @@
     %hr
     %h2
       Što ćemo hekati?
-    = markdown @hackathon.announcement
+    = markdown @hackatho.announcement
 
   #participants
     %hr
     =render :partial => 'pages/participants', :locals => { :event => @hackathon }
--elsif @last_hackathon
+-else
   #report
-    = markdown @last_hackathon.report
+    = markdown @hackathon.report

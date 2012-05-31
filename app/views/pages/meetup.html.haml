@@ -1,27 +1,29 @@
-#meetup
-  %h2 Što je meetup?
-  :markdown
-    Meetup je okupljanje developera (hr. razvojnika) koje se sastoji od druženja, predavanja ... and much much more?
+-if @meetup && !@meetup.report.present?
+  #meetup
+    %h2 Što je meetup?
+    :markdown
+      Meetup je okupljanje developera (hr. razvojnika) koje se sastoji od druženja, predavanja ... and much much more?
 
-    Teme su vezane uz razvoj web i mobilnih aplikacija u modernim tehnologijama sa krvavog ruba. Ako se palite na hajp termove poput: Rails, Django, Node, Backbone, Mongo, iOS, Android, Sencha Touch, Cofeescript ... bit će vam zanimljivo i na Code at Six druženjima.
+      Teme su vezane uz razvoj web i mobilnih aplikacija u modernim tehnologijama sa krvavog ruba. Ako se palite na hajp termove poput: Rails, Django, Node, Backbone, Mongo, iOS, Android, Sencha Touch, Cofeescript ... bit će vam zanimljivo i na Code at Six druženjima.
 
-    Ovim okupljanjem želimo širiti development community u Hrvatskoj, povezivati development profesionalce i entuzijaste te potaknuti razmjenu znanja, iskustava i prije spomenute pive.
+      Ovim okupljanjem želimo širiti development community u Hrvatskoj, povezivati development profesionalce i entuzijaste te potaknuti razmjenu znanja, iskustava i prije spomenute pive.
 
-    Također, preduvjet za sudjelovanje je da **mrzite** SVN.
+      Također, preduvjet za sudjelovanje je da **mrzite** SVN.
 
-#submissions
-  %hr
-  =render :partial => 'pages/submission', :locals => { :event => @meetup }
-  .clearboth
+  #submissions
+    %hr
+    =render :partial => 'pages/submission', :locals => { :event => @meetup }
+    .clearboth
 
--if @meetup
   #talks
     %hr
     %h2
       O čemu ćemo pričati?
     = markdown @meetup.announcement
 
-- if @meetup
   #participants
     %hr
     =render :partial => 'pages/participants', :locals => { :event => @meetup }
+-else @meetup
+  #report
+    = markdown @meetup.report

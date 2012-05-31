@@ -37,17 +37,7 @@ class PagesController < ApplicationController
   private
 
   def get_events_data
-    @meetup = Event.meetups.active
-    @hackathon = Event.hackathons.active
-    @last_hackathon = Event.hackathons.last
-
-    if not @meetup.present?
-      @meetup = Event.new
-    end
-    
-    if not @hackathon.present?
-      @hackathon = Event.new
-    end
-    
+    @meetup = Event.meetups.active || Event.meetups.last
+    @hackathon = Event.hackathons.active || Event.hackathons.last
   end
 end
