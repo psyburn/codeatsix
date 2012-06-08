@@ -6,7 +6,7 @@ class EventsController < ApplicationController
 
     respond_to do |wants|
       wants.html { render 'index' }
-      wants.json { render json: { meetup: Event.meetups.active
+      wants.json { render json: { meetup: Event.meetups.active,
                                   hackathon: Event.hackathons.active }}
     end
   end
