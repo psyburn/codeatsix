@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: events
+#
+#  id           :integer         not null, primary key
+#  title        :string(255)
+#  body         :text
+#  announcement :text
+#  report       :text
+#  scheduled_at :datetime
+#  created_at   :datetime        not null
+#  updated_at   :datetime        not null
+#  slug         :string(255)
+#  is_active    :boolean
+#  whatisit     :string(255)
+#
+
 class Event < ActiveRecord::Base
 
   has_many :submissions, :autosave => false
