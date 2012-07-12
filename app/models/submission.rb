@@ -1,3 +1,12 @@
+# == Schema Information
+#
+# Table name: submissions
+#
+#  id        :integer         not null, primary key
+#  person_id :integer
+#  event_id  :integer
+#
+
 class Submission < ActiveRecord::Base
   belongs_to :events
   belongs_to :person
