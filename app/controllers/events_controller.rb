@@ -14,7 +14,7 @@ class EventsController < ApplicationController
   def show
     if params[:slug]
       @event = Event.find_by_slug(params[:slug])
-    else 
+    else
       @event = Event.find(params[:id])
     end
 
