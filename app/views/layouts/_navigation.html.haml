@@ -1,15 +1,14 @@
 .buttons
   .meetup.link{:url => '/meetup'} Meetup
-  / .hackathon.link{:url => '/hackathon'} Hackathon
   .location.link{:url => '/location'} Gdje smo?
 
 #next-event
   - if @meetup.present? || @hackathon.present?
-    :erb
-      Meetup: <span class="yellow"><%= @meetup.date %></span> u <span class="yellow"><%= @meetup.time %>h</span> |
-      Hackathon: <span class="yellow"><%= @hackathon.date %></span> u <span class="yellow"><%= @hackathon.time %>h</span>
+    Meetup:
+    %span.yellow= @meetup.date
+    u
+    %span.yellow #{@meetup.time}h
   - else
-    :plain
-      Tu više ničeg za nas nema, nema ničega.
+    Tu više ničeg za nas nema, nema ničega.
 .clearboth
 %hr

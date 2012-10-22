@@ -3,6 +3,4 @@
   %p Zasada nema prijavljenih. Budi hipster i prijavi se dok još nitko nije!
 - else 
   - event.persons.each do |p|
-    %li
-      :erb
-        <%= p.name %>
+    %li= p.name

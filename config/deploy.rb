@@ -4,7 +4,7 @@ require 'bundler/capistrano'
 host = "codeatsix.infinum.hr"
 
 set :application, "codeatsix.infinum.hr"
-set :repository,  "git@github.com:neektza/codeatsix.git"
+set :repository,  "git@github.com:psyburn/codeatsix.git"
 set :deploy_to, "/var/www/c/codeatsix.infinum.hr" 
 
 set :scm, :git

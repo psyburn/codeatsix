@@ -1,9 +1,16 @@
-:erb
-	<h1><%= @event.title %></h1>
-	<strong>Title :</strong> <%= @event.title %><br />
-	<strong>Description :</strong> <%= @event.announcement %><br />
-	<strong>Datum odrzavanja:</strong> <%= @event.scheduled_at %><br />
-	<strong>Aktivan ivent:</strong><%= @event.is_active %><br/>
+%h1= @event.title
+%p
+  %strong Title :
+  = @event.title
+%p
+  %strong Description :
+  = @event.announcement.html_safe
+%p
+  %strong Datum odrzavanja:
+  = @event.scheduled_at
+%p
+  %strong Aktivan ivent:
+  = @event.is_active
 
-	<hr />
-	<%= link_to 'Back', events_path %>
+%hr/
+= link_to 'Back', events_path
