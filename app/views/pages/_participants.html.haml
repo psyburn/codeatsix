@@ -1,4 +1,4 @@
-%h2 Dolaze ...
+%h2= "Dolaze ( #{event.persons.count} )"
 - if !event.persons.present?
   %p Zasada nema prijavljenih. Budi hipster i prijavi se dok još nitko nije!
 - else 
