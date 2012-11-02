@@ -72,6 +72,13 @@ body {
 
   .banner {
     margin-left: 101px;
+    
+    #fork_me {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border: 0;
+    }
   }
 
   .yellow {
