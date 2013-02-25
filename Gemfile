@@ -1,14 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.1'
+gem 'rails', '3.2.12'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'json'
+gem 'json', '>= 1.7.7'
 gem 'execjs'
 gem 'capistrano'
+
 
 gem 'rails-boilerplate'
 gem 'jquery-rails'
