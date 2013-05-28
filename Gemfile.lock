@@ -148,6 +148,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   json (>= 1.7.7)
+  libv8
   mysql2
   rails (= 3.2.13)
   rails-boilerplate
