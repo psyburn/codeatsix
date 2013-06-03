@@ -54,12 +54,12 @@ body {
   font-size: 14px;
   line-height: 24px;
   text-align: left;
- 
+
   .button,
   .link {
     cursor: pointer;
   }
-  
+
   color: $font-gray;
 
   a {
@@ -89,7 +89,7 @@ body {
     font-style: bold;
     text-shadow: black 2px 1px 3px;
   }
-  
+
   h3 {
     color: #ffff00;
     font-size: 1.2em;
@@ -170,6 +170,10 @@ body {
     #announcement,
     #submissions {
 
+      .strikethrough {
+        text-decoration: line-through;
+      }
+
       input {
         border: 0px;
       }
@@ -222,7 +226,7 @@ body {
     width: $inner-width;
     height: auto;
     margin: auto;
-    
+
     #follow-button {
       @include yellow-button(40px, 18px);
       font-size: 20px;
