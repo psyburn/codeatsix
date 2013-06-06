@@ -24,10 +24,10 @@ class PagesController < ApplicationController
 
     person = Person.find_by_email(params[:person][:email])
     person = Person.new(params[:person]) unless person.present?
-    
+
     begin
       event.persons << person
-      render :json => { :message => "Thanks for applying." }
+      render :json => { :message => "Hvala na prijavi." }
     rescue Exception => e
       render :json => e.message, :status => 500
     end

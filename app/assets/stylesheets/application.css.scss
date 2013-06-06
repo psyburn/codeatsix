@@ -179,7 +179,7 @@ body {
     }
 
     .talks {
-      padding-top: 33px;
+      padding-top: 55px;
 
       .event-title {
         margin-top: 40px;
@@ -259,6 +259,10 @@ body {
   }
 }
 
+#messages {
+  float: left;
+  color: red;
+}
 
 //other resolutions
 @media screen and (max-width: 690px) {

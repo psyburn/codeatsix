@@ -21,12 +21,12 @@ $(document).ready(function() {
   // set up client side form validtion
   $("#apply-form").validate({
     rules: {
-      "person[name]": { required: true },
-      "person[email]": { required: true, email: true }
+      "name": { required: true },
+      "email": { required: true, email: true }
     },
     messages: {
-      "person[name]": 'Treba nam tvoje ime',
-      "person[email]": {
+      "name": 'Treba nam tvoje ime',
+      "email": {
         email: 'Kakav je to email?',
         required: 'Ovo polje nam je najvažnije!'
       }
@@ -39,10 +39,10 @@ $(document).ready(function() {
     // submit if valid
     if ($(this).valid()) {
       var params = {
-        event_id: $('#submissions #event_id:hidden').val(),
+        event_id: $('#event_id:hidden').val(),
         person: {
-          name: $('#name input').val(),
-          email: $('#email input').val()
+          name: $('#name').val(),
+          email: $('#email').val()
         }
       }
 
