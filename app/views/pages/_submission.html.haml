@@ -1,11 +1,11 @@
-%h2 Prijave
+%div.subtitle Prijave
 -if event
   = form_tag apply_path, :id => 'apply-form' do |f|
     = hidden_field_tag :event_id, event.id
-    #name.text_field
+    #name-div.text_field
       = text_field_tag :name, "", :placeholder => "ime/prezime"
-    #email.text_field
-      = text_field_tag :email, "", :placeholder => "email"
+    #email-div.text_field
+      = email_field_tag :email, "", :placeholder => "email"
     =submit_tag 'Prijavi se', :class => 'button', :id => 'apply'
   .clearboth
   #messages

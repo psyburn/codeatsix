@@ -1,5 +1,5 @@
-#meetup
-  %h2 Što je meetup?
+.meetup
+  %div.subtitle Što je meetup?
   %p
     Meetup je okupljanje developera (hr. razvojnika) koje se sastoji od druženja, predavanja ... and much much more?
   %p
@@ -9,25 +9,25 @@
   %p
     Također, preduvjet za sudjelovanje je da **mrzite** SVN.
   %p
-    Novo mjesto održavanja je u prostorijama HGK na Novoj Cesti - više o tome na
-    = link_to 'lokaciji', '/location'
-    \.
+    Novo mjesto održavanja je u prostorijama HGK na Novoj Cesti 7, Zagreb.
+    = link_to 'G-Mapa', 'http://maps.google.com/maps?q=Nova+cesta+7+10000,+Zagreb,+Croatia&hl=en&sll=45.807428,15.954014&sspn=0.005108,0.011319&t=v&hnear=Nova+cesta+7,+10000,+Zagreb,+Croatia&z=16'
+
 
 -if @meetup && !@meetup.report.present?
-  #submissions
-    %hr
+  .submissions#prijava
     =render :partial => 'pages/submission', :locals => { :event => @meetup }
     .clearboth
 
-  #talks
-    %hr
-    %h2
-      O čemu ćemo pričati?
+  .talks
+    %div.subtitle O čemu ćemo pričati?
     = markdown @meetup.announcement
 
-  #participants
-    %hr
+  .participants
     =render :partial => 'pages/participants', :locals => { :event => @meetup }
 -else @meetup
-  #report
+  .report
     = markdown @meetup.report
+.sponsors
+  = render :partial => 'layouts/sponsors'
+.follow
+  = render :partial => 'layouts/follow'

@@ -18,7 +18,6 @@
 //= require_tree .
 
 $(document).ready(function() {
-
   // set up client side form validtion
   $("#apply-form").validate({
     rules: {
@@ -32,11 +31,6 @@ $(document).ready(function() {
         required: 'Ovo polje nam je najvažnije!'
       }
     }
-  });
-
-  // DIVs as links
-  $('.link').click(function() {
-    window.location = $(this).attr("url");
   });
 
   $('#apply-form').submit(function(event) {
@@ -66,5 +60,19 @@ $(document).ready(function() {
       });
     }
   });
+
+  function setLineNums() {
+    var docHeight = $(document).height();
+    var lineHeight = 1.5 * 15;
+    var itemNum = parseInt(docHeight/lineHeight, 10);
+    var $container = $('.line-nums ol');
+    var elements = '';
+    for (var i=0; i<itemNum; ++i) {
+      elements+='<li></li>';
+    }
+    $container.append(elements);
+  }
+
+  setLineNums();
 
 });
